@@ -1,0 +1,487 @@
+/*
+ * Karim Hmaissi 
+ * Portfolio CSS
+ *
+ */
+
+/* ==========================================================================
+   Base styles: 
+   ========================================================================== */
+
+html {
+
+    font-family: 'Lato', sans-serif;
+    color: #fefefe;
+    font-size: 16px;
+    line-height: 1.4;
+
+    background-color: #29282c;
+}
+
+p, a, li, button, input, .button {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: "proxima-nova",sans-serif;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 1;
+}
+
+h2 {
+  font-size: 47px;
+  line-height: 1;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1.black, 
+h2.black, 
+h3.black, 
+h4.black, 
+h5.black, 
+h6.black {
+  color: #333333;
+}
+
+h1.underline, 
+h2.underline, 
+h3.underline, 
+h4.underline, 
+h5.underline, 
+h6.underline {
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+h1.underline:after, 
+h2.underline:after, 
+h3.underline:after, 
+h4.underline:after, 
+h5.underline:after, 
+h6.underline:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  margin-top: 33px;
+  left: 0;
+  background-color: #d8334a;
+  width: 120px;
+  height: 5px;
+}
+
+
+section {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+section.no-padding {
+  padding-top: 0;
+}
+
+
+ form {
+
+ }
+
+ form input, form textarea {
+  border: 3px solid white;
+  background-color: transparent;
+  padding-left: 30px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  min-height: 60px;
+
+ }
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Specific styles
+   ========================================================================== */
+
+
+
+
+/*
+ * Nav
+ */
+nav {
+  background-color: #272629;
+  height: 69px;
+  width: 100%;
+}
+
+nav .header li a {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: none;
+}
+
+
+nav .header li a > span {
+  color: #d8334a;
+  transition: color 0.2s ease;
+}
+
+
+nav ul.nav-menu li {
+  padding-top: 6px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #fefefe;
+  margin-right: 60px;
+  font-weight: 900;
+
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  cursor: pointer;
+
+  border-bottom-width: 2px;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  
+}
+
+nav ul.nav-menu.header li {
+  padding-top: 0;
+  transition: color 0.2s ease
+}
+
+
+nav ul.nav-menu.header li:hover {
+  border-bottom-color: transparent;
+}
+
+nav ul.nav-menu.header li:hover a {
+  color: #d8334a; 
+}
+
+nav ul.nav-menu.header li:hover span {
+  color: #ffffff;
+}
+
+nav ul.nav-menu li:hover {
+  color: #d8334a;
+  border-bottom-color: #d8334a;
+
+}
+
+nav .header li a:hover,
+nav .header li:hover a {
+  text-decoration: none;
+}
+
+
+
+nav .header li a,
+nav ul.nav-menu li {
+  font-family: "proxima-nova",sans-serif;
+}
+
+nav ul.nav-menu.left {
+  float: left;
+}
+
+nav ul.nav-menu.right {
+  float: right;
+}
+
+
+
+/*
+ * Hero
+ */
+.hero {
+  color: #fefefe;
+  padding-bottom: 0;
+}
+
+
+.hero .background-image {
+  width: 100%;
+  background: url(../images/bg.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 250px;
+}
+
+
+.hero p {
+  font-size: 24px;
+  line-height: 36px;
+  max-width: 840px;
+}
+
+/*
+ * Portfolio
+ */
+
+.portfolio {
+  background-color: #ffffff;
+}
+
+
+.portfolio ul.portfolio-list {
+  margin-top: 70px;
+}
+
+.portfolio ul.portfolio-list li {
+  height: 274px;
+  width: 24%;
+  margin-right: 1%;
+  float: left;
+  position: relative;
+  background-color: #29282c;
+  margin-bottom: 7px;
+  border-radius: 4px;
+}
+
+.portfolio ul.portfolio-list li > img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-top: 36%;
+}
+
+
+/*
+ * About
+ */
+
+
+
+/*
+ * Contact
+ */
+
+.contact {
+  padding-bottom: 0;
+}
+
+.contact .background-image {
+  width: 100%;
+  background: url(../images/contact-bg.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 200px;
+}
+
+
+/*
+ * Buttons
+ */
+
+.btn {
+  padding: 11px 31px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 900;
+  margin-top: 50px;
+  display: block;
+  max-width: 155px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn.btn-primary {
+  background-color: #d8334a;
+  border: none;
+}
+
+
+.btn.btn-secondary {
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+
+
+
+
+/* ==========================================================================
+   Helper Classes
+   ========================================================================== */
+ul.no-style {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+ul.inline.no-style li {
+  display: inline-block;
+  /*padding-right: 20px;*/
+}
+
+
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
