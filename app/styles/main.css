@@ -16,6 +16,11 @@ html {
     line-height: 1.4;
 
     background-color: #29282c;
+
+}
+
+body {
+  padding-top: 60px;
 }
 
 p, a, li, button, input, .button {
@@ -23,7 +28,6 @@ p, a, li, button, input, .button {
 }
 
 h1 {
-    font-family: "proxima-nova",sans-serif;
     font-weight: 900;
     color: #ffffff;
     font-size: 60px;
@@ -39,13 +43,17 @@ h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima-nova",sans-serif;
+}
+
 h1.black, 
 h2.black, 
 h3.black, 
 h4.black, 
 h5.black, 
 h6.black {
-  color: #333333;
+  color: #29282c;
 }
 
 h1.underline, 
@@ -75,9 +83,10 @@ h6.underline:after {
 }
 
 
+
 section {
   padding-top: 60px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 section.no-padding {
@@ -92,12 +101,16 @@ section.no-padding {
  form input, form textarea {
   border: 3px solid white;
   background-color: transparent;
-  padding-left: 30px;
+  padding-left: 15px;
   display: block;
   width: 100%;
   margin-bottom: 20px;
   min-height: 60px;
 
+ }
+
+ form textarea {
+  padding-top: 15px;
  }
 
 
@@ -188,9 +201,15 @@ nav {
   background-color: #272629;
   height: 69px;
   width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
-nav .header li a {
+body nav .header li a {
   color: #ffffff;
   font-size: 30px;
   font-weight: 900;
@@ -206,12 +225,13 @@ nav .header li a > span {
 
 
 nav ul.nav-menu li {
-  padding-top: 6px;
-  text-transform: uppercase;
   font-size: 16px;
   color: #fefefe;
-  margin-right: 60px;
+  
   font-weight: 900;
+  padding-top: 6px;
+  text-transform: uppercase;
+  margin-right: 60px;
 
   transition: color 0.2s ease, border-bottom-color 0.2s ease;
   cursor: pointer;
@@ -220,6 +240,14 @@ nav ul.nav-menu li {
   border-bottom-color: transparent;
   border-bottom-style: solid;
   
+}
+
+nav ul.nav-menu li a {
+  /*font-size: 16px;*/
+  color: #fefefe;
+  text-decoration: none;
+  
+  font-weight: 900;
 }
 
 nav ul.nav-menu.header li {
@@ -232,8 +260,8 @@ nav ul.nav-menu.header li:hover {
   border-bottom-color: transparent;
 }
 
-nav ul.nav-menu.header li:hover a {
-  color: #d8334a; 
+nav ul.nav-menu li:hover a {
+  color: #d8334a ;  
 }
 
 nav ul.nav-menu.header li:hover span {
@@ -279,7 +307,7 @@ nav ul.nav-menu.right {
 
 .hero .background-image {
   width: 100%;
-  background: url(../images/bg.jpg) no-repeat center center fixed; 
+  /*background: url(../images/bg.jpg) no-repeat center center fixed; */
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 250px;
@@ -296,7 +324,7 @@ nav ul.nav-menu.right {
  * Portfolio
  */
 
-.portfolio {
+/*.portfolio {
   background-color: #ffffff;
 }
 
@@ -328,6 +356,277 @@ nav ul.nav-menu.right {
   margin: 0 auto;
   padding-top: 36%;
 }
+*/
+
+.portfolio {
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/*.portfolio-item  {
+  opacity: 0.8;
+  transition: opacity 0.35s ease;
+}
+
+.portfolio-item:hover {
+  opacity: 1;
+}
+*/
+.portfolio-item .container {
+  width: 100%;
+
+/*  opacity: 0.2;
+  transition: opacity 0.35s ease;*/
+}
+/*
+.portfolio-item .container:hover {
+
+  opacity: 1;
+}*/
+
+.portfolio-copy {
+/*  width: 55%;
+  margin-top: 80px;
+  margin-bottom: 84px;
+  float: left;*/
+/*  padding-left: 10%;
+  padding-right: 10%;*/
+}
+
+.portfolio-image {
+/*  padding: 1%;
+      padding-right: 2%;
+      padding-left: 9%;
+      width: 55%;
+      float: left;*/
+
+      width: 50%;
+      float: left;
+      padding: 3%;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      background-color: #323136;
+
+      position: relative;
+}
+
+.portfolio-image .portfolio-image-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 49, 54, 0.92);
+
+  transition: background-color 0.35s ease;  
+
+}
+
+.portfolio-item.active .portfolio-image .portfolio-image-wrapper {
+  background-color: rgba(50, 49, 54, 0);
+}
+
+/*
+.portfolio-image,
+.portfolio-copy-wrapper {
+  width: 50%;
+  float: left;
+  padding: 3%;
+}*/
+
+.portfolio-copy {
+ background-color: #323136;
+}
+
+.portfolio-copy-wrapper {
+/*   width: 45%;
+   float: left;
+   padding: 3%;
+   padding-top: 40px;
+   padding-left: 6%;
+   padding-right: 6%;*/
+
+   width: 50%;
+   float: left;
+   background-color: #29282c;
+   padding: 5% 7%;
+   padding-bottom: 8%;
+}
+
+.portfolio-copy h3 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+}
+
+.portfolio-copy h3:after {
+  background-color: transparent;
+}
+
+
+.portfolio-copy ul {
+  display: inline-block;
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+/*  text-align: right;
+  position: absolute;
+  top: 95px;
+  right: 0;*/
+}
+
+.portfolio-copy li {
+  display: inline-block;
+  margin-right: 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+
+}
+
+.portfolio-copy p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.portfolio-copy a.btn {
+  display: block;
+  font-weight: 900;
+  margin-top: 30px;
+
+  background-color: #29282c;
+  color: #29282c;
+
+
+  transition: all 0.35s ease;
+}
+
+.portfolio-item.active .portfolio-copy a.btn {
+  background-color: #d8334a;
+  color: #ffffff;
+}
+
+
+.portfolio-image {
+/*  width: 45%;
+  margin-top: 80px;
+  float: left;
+  overflow: hidden;*/
+}
+
+.portfolio-image img {
+/*  position: absolute;
+  bottom: 0;*/
+  max-width: 100%;
+}
+
+
+
+
+
+/*colours*/
+.portfolio-item.white {
+  background-color: #f9f9f9;
+  background-color: transparent;
+}
+
+.portfolio-item.white .portfolio-copy h3 {
+  color: #29282c;
+}
+
+.portfolio-item.white .portfolio-copy p, 
+.portfolio-item.white .portfolio-copy li {
+  color: #5e5e5e;
+}
+
+/*.portfolio-item.white .portfolio-copy a {
+  color: #29282c;
+  background-color: transparent;
+  border: 3px solid #29282c;
+}
+*/
+/*.portfolio-item.white .portfolio-copy h3:after {
+    background-color: #29282c;
+}
+*/
+
+.portfolio-item.black {
+  background-color: #29282c;
+  /*background-color: transparent;*/
+}
+
+.portfolio-item.black .portfolio-copy h3 {
+  color: #f5f5f5;
+}
+
+.portfolio-item.black .portfolio-copy p, 
+.portfolio-item.black .portfolio-copy li {
+  color: #f5f5f5;
+}
+
+/*.portfolio-item.black .portfolio-copy a {
+  color: #f5f5f5;
+  background-color: transparent;
+  border: 3px solid #f5f5f5;
+}*/
+
+/*.portfolio-item.black .portfolio-copy h3:after {
+    background-color: #f5f5f5;
+}
+*/
+
+
+
+/*
+ * Divider
+ */
+.divider {
+  min-height: 100px;
+  width: 100%;
+  background-color: #f9f9f9;
+  text-align: left;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.divider h2 {
+  color: #29282C;
+  max-width: 330px;
+  margin: 0 auto;
+  margin-bottom: 00;
+  padding-bottom: 18px;
+
+  font-size: 36px;
+}
+
+.divider h2:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  margin-top: 33px;
+  left: -30px;
+  right: 0;
+  background-color: #d8334a;
+  width: 120px;
+  height: 5px;
+  margin: 0 auto;
+}
+
+.divider a.btn {
+  display: block;
+  background-color: #D8334A;
+  width: 155px;
+  margin: auto;
+  margin-top: 0;
+}
 
 
 /*
@@ -349,7 +648,11 @@ nav ul.nav-menu.right {
   background: url(../images/contact-bg.jpg) no-repeat center center fixed; 
   background-size: cover;
   padding-top: 60px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
+}
+
+.contact form {
+  padding-top: 60px;
 }
 
 
