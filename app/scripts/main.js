@@ -20,7 +20,13 @@
 	};
 
 	var setHeightOfPortfolioItems = function () {
-		$(".portfolio-image").height($(".portfolio-copy-wrapper").height() + "px");
+		
+		// if($("body").width() > 1280) {
+			// $(".portfolio-copy-wrapper").height($(".portfolio-image").height());
+		// } else {
+			$(".portfolio-image").height($(".portfolio-copy-wrapper").height() + "px");
+		// }
+		
 	};
 
 
@@ -66,7 +72,7 @@
 			
 				if(direction === "up") waypointActivated(this.element);
 
-			}, {offset: "10%"});
+			}, {offset: "5%"});
 		};
 
 
@@ -82,7 +88,7 @@
 	      if (target.length) {
 	        $('html,body').animate({
 	          scrollTop: target.offset().top - 60
-	        }, 800);
+	        }, 600);
 	        return false;
 	      }
 	    }
@@ -96,7 +102,9 @@
 		$(".nav-menu > li").velocity("transition.slideDownIn", {stagger: 150, display: "inline-block"});
 		$(".fade-down-in").velocity("transition.slideDownIn", {stagger: 150, display: "block", delay: 0});
 
-		$(".fade-down-in-btn").velocity("transition.slideDownIn", {stagger: 150, display: "block", delay: 600});
+		$(".fade-down-in-btn").velocity("transition.slideUpIn", {stagger: 150, display: "block", delay: 800, duration: 250});
+
+		$(".experiences > span").velocity({"color": "#d8334a", translateX: 100}, {stagger: 150, display: "inline", delay: 1025, duration: 400});
 
 
 		// $(".color-red")

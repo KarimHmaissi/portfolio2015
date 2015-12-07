@@ -1,3 +1,8 @@
+/*notes*/
+
+    /*background-color: #242327*/
+    /*alternative background color for portfolio items*/
+
 /*
  * Karim Hmaissi 
  * Portfolio CSS
@@ -15,7 +20,7 @@ html {
     font-size: 16px;
     line-height: 1.4;
 
-    background-color: #29282c;
+    background-color: #272629;
 
 }
 
@@ -95,6 +100,11 @@ h6.underline:after {
 section {
   padding-top: 60px;
   padding-bottom: 60px;
+
+  /*fixed layout*/
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 section.no-padding {
@@ -235,6 +245,20 @@ textarea {
 
 
 /*//responsive spacing*/
+@media only screen and (max-width : 720px) and (min-width: 421px) {
+  body section.contact .background-image,
+  body section.about {
+      padding-top: 20px;
+      padding-bottom: 60px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .container {
+      width: 100%;
+  }
+}
 
 
 @media only screen and (max-width : 480px) {
@@ -301,6 +325,8 @@ body nav .header li a {
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: none;
+
+  /*padding-left: 70px;*/
 }
 
 
@@ -332,7 +358,6 @@ nav ul.nav-menu li a {
   /*font-size: 16px;*/
   color: #fefefe;
   text-decoration: none;
-  
   font-weight: 900;
 
   font-family: "proxima-nova",sans-serif !important;
@@ -383,6 +408,47 @@ nav ul.nav-menu.right {
 }
 
 
+@media only screen and (min-width : 1171px) {
+  body nav .header li a {
+    padding-left: 70px;
+  }
+
+}
+
+@media only screen and (max-width : 1170px) {
+  body nav .header li a {
+    padding-left: 0;
+  }
+
+}
+
+
+/*
+ * Fixed padding
+ */
+ @media only screen and (min-width : 1200px) {
+ .container {
+     max-width: 1170px;
+     width: 100%;
+ }
+}
+
+
+ .background-image,
+ section.about {
+  padding-left: 5%;
+  padding-right: 5%;
+ }
+
+ section.about,
+ section.hero {
+  background-color: #29282C;
+ }
+
+ section.contact {
+  padding-top: 0;
+ }
+
 
 /*
  * Hero
@@ -418,7 +484,32 @@ body .hero a.btn.btn-primary {
   margin: 0 auto;
   margin-top: 50px;
 
-  /*background-color: #d8334a;*/
+  background-color: #d8334a;
+}
+
+@media only screen and (max-width : 720px) and (min-width: 481px) {
+  .hero .background-image {
+
+   padding-top: 60px;
+   padding-bottom: 120px;
+ } 
+
+ .hero h1 {
+     text-align: left;
+     font-size: 50px;
+ }
+
+ .hero p {
+     font-size: 20px;
+     line-height: 1.5;
+ }
+
+ body .hero a.btn.btn-primary {
+  margin: 0;
+  margin-top: 50px;
+  text-align: center;
+ }
+
 }
 
 @media only screen and (max-width : 480px) {
@@ -427,6 +518,12 @@ body .hero a.btn.btn-primary {
    padding-top: 40px;
    padding-bottom: 100px;
  } 
+
+ body .hero a.btn.btn-primary {
+  margin: 0;
+  margin-top: 50px;
+  text-align: center;
+ }
 
  
 }
@@ -445,22 +542,49 @@ body .hero a.btn.btn-primary {
 }
 
 
+.portfolio-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  opacity: 0.8;
+
+  transition: opacity 0.35s ease, 
+              background-color 0.35s ease;
+}
+
+.portfolio-item.active {
+  opacity: 1;
+}
+
 .portfolio-item .container {
   width: 100%;
+  max-width: 1170px;
 
 }
 
+
+
 .portfolio-image {
 
-  width: 50%;
+  width: 58%;
   float: left;
   padding: 3%;
   padding-top: 5%;
   padding-bottom: 5%;
-  background-color: #323136;
+  background-color: transparent;
 
   position: relative;
 }
+
+/*body .portfolio-item .portfolio-image:nth-child(odd) {
+    padding-left: 5%;
+    padding-right: 0;
+}*/
+body .portfolio-item .portfolio-image{
+    padding-left: 0;
+    padding-right: 6%;
+}
+
 
 .portfolio-image .portfolio-image-wrapper {
   position: absolute;
@@ -468,7 +592,7 @@ body .hero a.btn.btn-primary {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(50, 49, 54, 0.92);
+  /*background-color: rgba(50, 49, 54, 0.92);*/
 
   transition: background-color 0.35s ease;  
 
@@ -479,21 +603,21 @@ body .hero a.btn.btn-primary {
 }
 
 
-.portfolio-copy {
- background-color: #323136;
-}
+/*.portfolio-copy {
+ background-color: #29282C;
+}*/
 
 .portfolio-copy-wrapper {
 
-   width: 50%;
+   width: 42%;
    float: left;
-   background-color: #29282c;
-   padding: 5% 7%;
+   /*background-color: #29282c;*/
+   padding: 7%;
    padding-bottom: 8%;
 }
 
 .portfolio-copy h3 {
-  font-size: 70px;
+  font-size: 60px;
   text-transform: uppercase;
   font-weight: 900;
   margin-top: 0;
@@ -560,6 +684,14 @@ body .hero a.btn.btn-primary {
  }
 
 
+ body section.portfolio .portfolio-item p.responsible {
+    font-family: "proxima-nova",sans-serif;
+    font-weight:  900;
+    color: #ffffff;
+
+     display: none;
+ }
+
 
  body section.portfolio .portfolio-item p.responsible span {
   font-family: "proxima-nova",sans-serif;
@@ -568,28 +700,12 @@ body .hero a.btn.btn-primary {
 
   opacity: 0;
   transition: opacity 0.35s ease;
+ 
  }
 
  body section.portfolio .portfolio-item.active p.responsible span {
   opacity:  1;
  }
-
- body section.portfolio .portfolio-item p.responsible {
-    font-family: "proxima-nova",sans-serif;
-    font-weight:  900;
-    color: #ffffff;
- }
-
-@media only screen and (max-width : 720px) {
- body section.portfolio .portfolio-item .portfolio-copy-wrapper p.responsible span {
-  opacity: 1;
- }
-
- body section div.row .portfolio-copy a.btn {
-
-   color: #ffffff !important;
- }
-}
 
 
 
@@ -625,8 +741,10 @@ body section div.row .portfolio-copy a.btn {
 }
 
 .portfolio-image img {
-
+  width: 100%;
   max-width: 100%;
+  display: block;
+  height: auto;
 }
 
 
@@ -647,7 +765,11 @@ body section div.row .portfolio-copy a.btn {
 
 
 .portfolio-item.black {
-  background-color: #29282c;
+  background-color: #29282C;
+}
+
+body section .portfolio-item.active {
+  background-color: #242327 !important;
 }
 
 .portfolio-item.black .portfolio-copy h3 {
@@ -659,10 +781,31 @@ body section div.row .portfolio-copy a.btn {
   color: #f5f5f5;
 }
 
+
+@media only screen and (max-width : 720px) and (min-width: 481px) {
+
+  body .portfolio {
+    background-color: #29282C;
+  }
+
+  .portfolio-copy-wrapper {
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+    }
+}
+
+
 @media only screen and (max-width : 720px) {
   body .portfolio {
     padding-top: 40px;
     padding-bottom: 60px;
+    background-color: #29282C;
+
+  }
+
+  body section .portfolio-item.black {
+    background-color: #29282C !important;
   }
 
   body .portfolio-copy-wrapper {
@@ -684,9 +827,30 @@ body section div.row .portfolio-copy a.btn {
   body .portfolio-image {
     display: none;
   }
+
+  body section.portfolio .portfolio-item .portfolio-copy-wrapper p.responsible span {
+   opacity: 1;
+  }
+
+  body section div.row .portfolio-copy a.btn {
+
+    color: #ffffff !important;
+  }
+
+  body section .portfolio-item {
+   opacity: 1;
+  }
 }
 
+@media only screen and (min-width : 1280px) {
+  body .portfolio-item .portfolio-copy-wrapper {
+    /*padding: 10%;*/
+  }
 
+  body .portfolio-item .portfolio-image  {
+    /*padding: 6%;*/
+  }
+}
 
 /*
  * Divider
@@ -698,6 +862,9 @@ body section div.row .portfolio-copy a.btn {
   text-align: left;
   padding-top: 40px;
   padding-bottom: 40px;
+
+  max-width: 1170px;
+  margin: 0 auto;
 }
 
 .divider h2 {
@@ -736,6 +903,9 @@ body section div.row .portfolio-copy a.btn {
  * About
  */
 
+section.about {
+  padding-bottom: 80px;
+}
 
 
 /*
@@ -748,7 +918,7 @@ body section div.row .portfolio-copy a.btn {
 
 .contact .background-image {
   width: 100%;
-  background: url(../images/contact-bg.jpg) no-repeat center center fixed; 
+  /*background: url(../images/contact-bg.jpg) no-repeat center center fixed; */
   background-size: cover;
   padding-top: 60px;
   padding-bottom: 100px;
