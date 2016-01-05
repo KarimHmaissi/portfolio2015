@@ -13,6 +13,8 @@
 		velocityAnimations();
 		
 		initSlowScroll();
+
+		initMobileMenu();
 	};	
 
 	var isMobile = function () {
@@ -21,11 +23,12 @@
 
 	var setHeightOfPortfolioItems = function () {
 		
-		// if($("body").width() > 1280) {
+		if($("body").width() > 910) {
 			// $(".portfolio-copy-wrapper").height($(".portfolio-image").height());
-		// } else {
 			$(".portfolio-image").height($(".portfolio-copy-wrapper").height() + "px");
-		// }
+			
+		} else {
+		}
 		
 	};
 
@@ -99,27 +102,64 @@
 
 	var velocityAnimations = function () {
 		// $(".fade-up-in").velocity("transition.slideUpIn");	
-		$(".nav-menu > li").velocity("transition.slideDownIn", {stagger: 150, display: "inline-block"});
+
+		if(!isMobile()) {
+			$(".nav-menu > li").velocity("transition.slideDownIn", {stagger: 150, display: "inline-block"});
+		}
 		$(".fade-down-in").velocity("transition.slideDownIn", {stagger: 150, display: "block", delay: 0});
 
-		$(".fade-down-in-btn").velocity("transition.slideUpIn", {stagger: 150, display: "block", delay: 800, duration: 250});
+		$(".slide-up-in").velocity("transition.slideUpIn", {stagger: 150, display: "block", delay: 800, duration: 250});
 
 		$(".experiences > span").velocity({"color": "#d8334a", translateX: 100}, {stagger: 150, display: "inline", delay: 1025, duration: 400});
 
+	};
 
-		// $(".color-red")
-		// .velocity("callout.bounce", {
-		//     options: { duration: 350, delay: 350}
-		// })
-		// .velocity({
-		//     properties: { color: "#D8334A" },
-		//     options: { duration: 300, delay: 0}
-		// });
 
+	var initMobileMenu = function () {
 		
+		var menuToggle = function (e) {
+			e.preventDefault();
+			var $el = $(this);
+
+			// $("body").toggleClass("active");	
+
+			if($("body").hasClass("active")) {
+				$("body").removeClass("active");
+				slideout.close();
+			} else {
+				if(!$("body").hasClass("active")) {
+					$("body").addClass("active");
+				}
+				slideout.open();
+
+			}
 
 
-		
+		};
+
+		$(".menu-toggle-wrapper, .close-mobile-menu-btn").click(menuToggle);
+
+
+		var slideout = new Slideout({
+			"panel": $(".push").get(0),
+			"menu": $("nav .collapse").get(0),
+			"padding": 256,
+			"tolerance": 70
+		});
+
+
+		slideout.on("open", function () {
+			if(!$("body").hasClass("active")) {
+				$("body").addClass("active");
+			}
+
+
+			
+		});
+
+		slideout.on("close", function () {
+			$("body").removeClass("active");
+		});
 
 
 	};

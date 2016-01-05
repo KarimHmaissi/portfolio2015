@@ -37,31 +37,57 @@
     <![endif]-->
     
 
-
-
-
-    <nav class="clearfix">
+    <nav class="clearfix navbar mobile">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             
             <ul class="nav-menu left header no-style">
               <li><a href="/"><span>karim</span>hmaissi</a></li>
+              <div class="menu-toggle-wrapper">
+                <a type="button" class="menu-toggle" >
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
             </ul>
-
-            <ul class="nav-menu right no-style inline hidden-xs">
-              <li><a href="#work">Work</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#">Download CV</a></li>
-            </ul>
-          </div>
+            
         </div>
       </div>
       
     </nav>
 
 
+    <nav class="clearfix navbar ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            
+            <ul class="nav-menu left header no-style no-mobile">
+              <li><a href="/"><span>karim</span>hmaissi</a></li>
+             
+            </ul>
+            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+              <div class="close-mobile-menu"><a href="#" class="close-mobile-menu-btn">X</a></div>
+              <ul class="nav-menu right no-style inline nav navbar-nav">
+                <!-- <li class="brand-mobile"><a href="/"><span>karim</span>hmaissi</a></li> -->
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="#">Download CV</a></li> -->
+                <li><a href="https://github.com/KarimHmaissi"><i class="fa fa-2x fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/karim-hmaissi-2155b753"><i class="fa fa-2x fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+
+    <div class="push">
+      
+    
 
     <section class="hero no-padding">
       <div class="background-image">
@@ -72,7 +98,7 @@
               <!-- <p>Located in the old English town of Shrewsbury, home to the world's first skyscraper & the oldest working brewery. Working as a designer & developer at Zengenti</p> -->
               <p class="fade-down-in">Located just outside Birmingham UK, in a small town called West Bromwich. I am a freelance frontend developer currently looking for contract work.</p>
 
-              <a href="#work"  class="btn btn-primary fade-down-in-btn">My Work <i class="fa fa-hand-o-down"></i></a>
+              <a href="#work"  class="btn btn-primary slide-up-in">My Work <i class="fa fa-hand-o-down"></i></a>
             </div>
           </div>
         </div><!-- ./container -->
@@ -81,7 +107,7 @@
     </section><!-- ./hero -->
 
 
-    <div class="divider " id="work">
+    <div class="divider slide-up-in" id="work">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
@@ -108,14 +134,24 @@
 
                     <p class="responsible">Responsible for: <span>Front End Devolopment Only</span></p>
                  
-                    <p>We are a small team of creative technology thinkers and makers, dedicated to the pursuit of birning remarkable digital products to the world. Our manifesto wan't written by and agency copywriter - it doesn't explian why we are different or better than anyone else. It's just three words that we live by everyday</p>
+                    <p><strong>Responsible for front end development only.</strong> </p>
+                    <p><strong>Challenges</strong></p>
+                    <ul>
+                      <li>Displaying large images outside the initial css grid.</li>
+                      <li>Nice opening animation.</li>
+                      <li>Displaying large amnount of data on mobile with sliding tables.</li>
+                      <li>Complex dropdowns including images and scrollling.</li>
+                    </ul>
                 
                     <a href="http://www.lotuscars.com/" target="_blank" class="btn btn-primary">Visit live site <i class="fa fa-external-link"></i></a>    
                   </div>
 
                   <div class="portfolio-image">
                     <div class="portfolio-image-wrapper"></div>
+                    <!-- <iframe src='http://gfycat.com/ifr/SecondFlatHarborseal' frameborder='0' scrolling='no' width='650' height='366' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe> -->
                     <img src="images/lotusModded_Static.gif">
+
+                    
                   
                   </div>
                  
@@ -355,15 +391,14 @@
 
               <h2 class="underline">Contact me</h2>
               
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur adipisci dolores, necessitatibus quidem. Sed voluptatibus nulla, ipsam, perferendis. You can contact me at <a href="mailto:contact@karimhmaissi.com">contact@KarimHmaissi.com</a></p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur adipisci dolores, necessitatibus quidem. Sed voluptatibus nulla, ipsam, perferendis aperiam voluptatum dicta quam fugiat nisi hic deserunt voluptatem minus eaque eius.</p>
-              <p>Apisicing elit. Ipsam fugit qui, quisquam quaerat voluptatibus voluptatum iste a accusantium dignissimos maiores dolore harum mollitia adipisci, suscipit quidem placeat praesentium provident cupiditate.</p>
+              <p>For any inqueries please email me at <a href="mailto:contact@karimhmaissi.com">contact@KarimHmaissi.com</a></p>
+              
               <!-- <a href="#" class="btn btn-secondary">Download CV</a> -->
             </div>
             <div class="col-lg-6 col-md-6 col-xs-12">
               
 
-              <form action="">
+             <!--  <form action="">
                 <div class="form-group">
                   <label for="name"><input type="text" id="name" name="name" required placeholder="full name"></label>
                   <label for="email"><input type="email" id="email" name="email" required placeholder="email"></label>
@@ -371,7 +406,7 @@
 
                   <button type="submit" class="btn btn-primary">Send Message <i class="fa fa-comment"></i></button>
                 </div>
-              </form>
+              </form> -->
             </div>
 
           </div><!-- ./row -->
@@ -380,6 +415,8 @@
       
       
     </section><!-- ./contact -->
+
+    </div><!-- ./push -->
 
 
     
@@ -407,7 +444,8 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
-    <script src="/scripts/bootstrap.js"></script>
+    <script src="/bower_components/slideout.js/dist/slideout.js"></script>
+
     <script src="scripts/velocity.min.js"></script>
     <script src="scripts/velocity.ui.js"></script>
     <!-- endbower -->

@@ -97,12 +97,16 @@ h6.underline:after {
 
 
 
+.fa-2x {
+    font-size: 1.2em;
+}
+
 section {
   padding-top: 60px;
   padding-bottom: 60px;
 
   /*fixed layout*/
-  max-width: 1170px;
+  max-width: 1370px;
   width: 100%;
   margin: 0 auto;
 }
@@ -308,15 +312,24 @@ textarea {
  * Nav
  */
 nav {
-  background-color: #272629;
+  /*background-color: #272629;*/
+  background-color: #ffffff;
   height: 69px;
   width: 100%;
 
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1;
+
+  margin: 0 auto;
+
+  max-width: 1370px;
+
+  -webkit-backface-visibility: hidden; 
+  -webkit-transform: translateZ(0);
 }
 
 body nav .header li a {
@@ -343,7 +356,7 @@ nav ul.nav-menu li {
   font-weight: 900;
   padding-top: 6px;
   text-transform: uppercase;
-  margin-right: 60px;
+  margin-right: 40px;
 
   transition: color 0.2s ease, border-bottom-color 0.2s ease;
   cursor: pointer;
@@ -356,7 +369,8 @@ nav ul.nav-menu li {
 
 nav ul.nav-menu li a {
   /*font-size: 16px;*/
-  color: #fefefe;
+  /*color: #fefefe;*/
+  color: #242327;
   text-decoration: none;
   font-weight: 900;
 
@@ -378,7 +392,8 @@ nav ul.nav-menu li:hover a {
 }
 
 nav ul.nav-menu.header li:hover span {
-  color: #ffffff;
+  /*color: #ffffff;*/
+  color: #242327;
 }
 
 nav ul.nav-menu li:hover {
@@ -410,17 +425,277 @@ nav ul.nav-menu.right {
 
 @media only screen and (min-width : 1171px) {
   body nav .header li a {
-    padding-left: 70px;
+    padding-left: 15%;
   }
 
 }
 
-@media only screen and (max-width : 1170px) {
+@media only screen and (max-width : 1370px) and (min-width: 911px) {
   body nav .header li a {
-    padding-left: 0;
+    padding-left: 15%;
   }
 
 }
+
+@media only screen and (max-width : 960px) {
+  body nav .header li a {
+    padding-left: 5%;
+  }
+
+}
+
+
+
+
+/*Slide out menu*/
+
+
+
+
+
+
+/*.collapse.navbar-collapse {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #272629;
+
+    left: -100%;
+    top: 0;
+
+    margin-top: 60px;
+  }*/
+
+.close-mobile-menu {
+  display: none;
+}
+
+.brand-mobile {
+  display: none;
+}
+
+body nav ul.nav-menu.left.header.no-mobile {
+  display: block;
+}
+
+body nav.mobile {
+  display: none;
+}
+
+@media only screen and (max-width : 960px) {
+
+
+  body nav.mobile {
+    display: block;
+    z-index: 99;
+    padding: 0 5%;
+  }
+
+  body nav ul.nav-menu.left.header.no-mobile {
+    display: none;
+  }
+
+
+
+
+  /*https://mango.github.io/slideout/*/
+  /*start*/
+
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slideout-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 256px;
+    /*overflow-y: auto;*/
+    -webkit-overflow-scrolling: touch;
+    display: none;
+
+    padding-top: 60px;
+  }
+
+  .slideout-panel {
+    position: relative;
+    z-index: 1;
+  }
+
+  .slideout-open,
+  .slideout-open body,
+  .slideout-open .slideout-panel {
+    overflow: hidden;
+  }
+
+  .slideout-open .slideout-menu {
+    display: block;
+  }
+
+
+  /*./end*/
+
+
+/*
+  body {
+    transition: transform 0.35s ease-out;
+    transform: translate3d(0,0,0);
+  }
+
+  body.active {
+    transform: translate3d(100%,0,0);
+  }
+
+
+  body.active nav .collapse.navbar-collapse {
+    background-color: #272629;
+    transform: translateX(0);
+  }*/
+
+  nav ul.nav-menu.right {
+    float: none;
+    max-width: 360px;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  body ul.inline.no-style li {
+    display: block !important;
+    margin-bottom: 8px;
+    margin-right: 0;
+    text-align: left;
+    margin-left: 25px;
+
+    /*opacity: 0;*/
+
+    transition: opacity 0.35s ease;
+  }
+
+  body.active ul.inline.no-style li {
+    opacity: 1;
+  }
+
+  nav ul.nav-menu li a {
+    font-size: 24px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: "proxima-nova",sans-serif !important;
+
+  }
+
+  body nav .header li a {
+    font-size: 30px;
+    color: #242327;
+  }
+
+  body.active nav .collapse .close-mobile-menu {
+    position: fixed;
+    right: 0;
+    top: -60px;
+   
+
+    display: block;
+    min-height: 60px;
+    min-width: 60px;
+  } 
+
+  body.active nav .collapse .close-mobile-menu-btn {
+    margin: 40px;
+    margin-top: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    font-size: 32px;
+  }
+
+  body .brand-mobile {
+
+  }
+
+  body nav ul.nav-menu.left {
+    width: 100%;
+  }
+
+
+  /*mobile menu btn*/
+
+  .menu-toggle {
+    
+  }
+
+  .menu-toggle-wrapper {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding-right: 40px;
+    padding-top: 30px;
+    border: none;
+    z-index: 9999;
+    min-height: 60px;
+    padding-left: 40px;
+  }
+
+
+  .menu-toggle .icon-bar,
+  .menu-toggle .icon-bar:before,
+  .menu-toggle .icon-bar:after {
+    color: #ffffff;
+    border: none;
+    background-color: #242327;
+    height: 3px;
+    width: 35px;
+  }
+
+  .menu-toggle .icon-bar {
+    display: block;
+    position: relative;
+    opacity: 0.7;
+
+    transition: background-color 0.2s ease-out;
+  }
+
+  .menu-toggle .icon-bar:before,
+  .menu-toggle .icon-bar:after {
+    content: "";
+    position: absolute;
+    display: block;
+    transform-origin: 7px;
+
+    transition: transform 0.35s ease-out;
+
+  }
+
+  .menu-toggle .icon-bar:before {
+    top: -8px;
+  }
+
+  .menu-toggle .icon-bar:after {
+    top: 8px;
+  }
+
+  body.active .menu-toggle .icon-bar {
+    background-color: #ffffff;
+  }
+
+  body.active .menu-toggle .icon-bar:before {
+    transform: rotate(45deg);
+  }
+
+  body.active .menu-toggle .icon-bar:after {
+    transform: rotate(-45deg);
+  }
+
+
+}
+
+
+    
 
 
 /*
@@ -428,7 +703,7 @@ nav ul.nav-menu.right {
  */
  @media only screen and (min-width : 1200px) {
  .container {
-     max-width: 1170px;
+     max-width: 1370px;
      width: 100%;
  }
 }
@@ -442,7 +717,7 @@ nav ul.nav-menu.right {
 
  section.about,
  section.hero {
-  background-color: #29282C;
+  background-color: #242327;
  }
 
  section.contact {
@@ -558,7 +833,7 @@ body .hero a.btn.btn-primary {
 
 .portfolio-item .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1370px;
 
 }
 
@@ -566,10 +841,10 @@ body .hero a.btn.btn-primary {
 
 .portfolio-image {
 
-  width: 58%;
+  width: 57%;
   float: left;
   padding: 3%;
-  padding-top: 5%;
+  padding-top: 2%;
   padding-bottom: 5%;
   background-color: transparent;
 
@@ -609,7 +884,7 @@ body .portfolio-item .portfolio-image{
 
 .portfolio-copy-wrapper {
 
-   width: 42%;
+   width: 43%;
    float: left;
    /*background-color: #29282c;*/
    padding: 7%;
@@ -636,19 +911,19 @@ body .portfolio-item .portfolio-image{
 
 
 .portfolio-copy ul {
-  display: inline-block;
+/*  display: inline-block;
   padding-left: 0;
   margin-left: 0;
-  list-style: none;
+  list-style: none;*/
 
 }
 
 .portfolio-copy li {
-  display: inline-block;
-  margin-right: 15px;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 900;
+  /*display: inline-block;*/
+  /*margin-right: 15px;*/
+  /*text-transform: uppercase;*/
+  font-size: 14px;
+  font-weight: 400;
 
 }
 
@@ -765,7 +1040,10 @@ body section div.row .portfolio-copy a.btn {
 
 
 .portfolio-item.black {
-  background-color: #29282C;
+  /*background-color: #29282C;*/
+
+  background-color: #242327;
+  border-bottom: 4px solid #272629;
 }
 
 body section .portfolio-item.active {
@@ -779,6 +1057,30 @@ body section .portfolio-item.active {
 .portfolio-item.black .portfolio-copy p, 
 .portfolio-item.black .portfolio-copy li {
   color: #f5f5f5;
+}
+
+
+/*//tablet*/
+@media only screen and (max-width : 1024px) and (min-width: 720px) {
+  .portfolio-copy-wrapper {
+      width: 51%;
+      float: left;
+      background-color: rgba(36, 35, 39, 0.94);
+      padding: 7%;
+      padding-bottom: 8%;
+      position: absolute;
+      z-index: 1;
+  }
+
+  .portfolio-image {
+      width: 74%;
+      float: right;
+      padding: 3%;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      background-color: transparent;
+      position: relative;
+  }
 }
 
 
@@ -860,21 +1162,20 @@ body section .portfolio-item.active {
   width: 100%;
   background-color: #f9f9f9;
   text-align: left;
-  padding-top: 40px;
-  padding-bottom: 40px;
-
-  max-width: 1170px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  max-width: 1370px;
   margin: 0 auto;
 }
 
 .divider h2 {
   color: #29282C;
-  max-width: 330px;
   margin: 0 auto;
   margin-bottom: 00;
   padding-bottom: 18px;
-
-  font-size: 36px;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 400;
 }
 
 .divider h2:after{
@@ -882,11 +1183,10 @@ body section .portfolio-item.active {
   position: absolute;
   bottom: 0;
   margin-top: 33px;
-  left: -30px;
   right: 0;
   background-color: #d8334a;
-  width: 120px;
-  height: 5px;
+  width: 112px;
+  height: 3px;
   margin: 0 auto;
 }
 
@@ -1063,17 +1363,22 @@ body section div.row ul.btn-list > li.linkedin > a:hover {
 }*/
 
 
+@media only screen and (min-width : 910px) {
+  .js .nav-menu > li {
+    opacity: 0;
+  }
+}
+
 
 /*effects*/
 .js .fade-down-in,
-.js .nav-menu > li,
-.js .fade-down-in-btn {
+.js .slide-up-in {
   opacity: 0;
 }
 
 .no-js .fade-down-in,
 .no-js .nav-menu > li,
-.no-js .fade-down-in-btn {
+.no-js .slide-up-in {
   opacity: 1;
 }
 
